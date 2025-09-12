@@ -12,4 +12,4 @@ Turn on the blocklist feature.
 Add the raw URL(s) from this repository:If it’s one file: https://raw.githubusercontent.com/your-username/blocklists/main/merged_hosts.txt
 If split: https://raw.githubusercontent.com/your-username/blocklists/main/merged_hosts_part1.txt, merged_hosts_part2.txt, etc.
 
-Split into two files for now will update two one single file later. 9-12-25
+Split into two files for now will update into one single file later. 9-12-25
