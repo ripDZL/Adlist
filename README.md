@@ -62,6 +62,3 @@ This is my personal setup, but I’m open to suggestions. Got ideas for better b
 ## Troubleshooting
 - **False Positives/Blocked Sites**: Some legit domains might get blocked. Use Technitium’s Allowlist to fix issues.
 - **Fetch Errors?**: Test the raw GitHub URLs in a browser to ensure they’re accessible.
-- **Need Help?**: Open an issue or contact me (I’ll share contact info if we’re working together).
-
-## Split into two files for now will update into one single file later. 9-12-25
