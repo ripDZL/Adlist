@@ -1,0 +1,352 @@
+{
+  "schema_version": 2,
+  "original_sources_sha256": "7d99309f43f99738b8cf7fd569399db639fc0b3e9ae885ca256e77a19e8256e0",
+  "max_domains": 8000000,
+  "max_output_bytes": 268435456,
+  "min_domains": 20000,
+  "max_change_fraction": 0.25,
+  "protected_exact": [
+    "raw.githubusercontent.com",
+    "github.com",
+    "api.github.com",
+    "cdn.jsdelivr.net"
+  ],
+  "router": {
+    "max_cache_mib": 384,
+    "bytes_per_name_budget": 100,
+    "resolver_reserve_mib": 16,
+    "min_free_mib": 256,
+    "max_file_bytes": 134217728
+  },
+  "sources": [
+    {
+      "id": "oisd-big",
+      "url": "https://big.oisd.nl/",
+      "original_url": "https://big.oisd.nl/",
+      "format": "abp",
+      "min_domains": 20000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "fallback_urls": [
+        "https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_big.txt"
+      ]
+    },
+    {
+      "id": "frogeye-firstparty",
+      "url": "https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt",
+      "original_url": "https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt",
+      "format": "hosts",
+      "min_domains": 1000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "windows-spyblocker",
+      "url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt",
+      "original_url": "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt",
+      "format": "hosts",
+      "min_domains": 10,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "perflyst-android",
+      "url": "https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt",
+      "original_url": "https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracking.txt",
+      "format": "hosts",
+      "min_domains": 10,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "stevenblack",
+      "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+      "original_url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+      "format": "hosts",
+      "min_domains": 20000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "developerdan",
+      "url": "https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt",
+      "original_url": "https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt",
+      "format": "hosts",
+      "min_domains": 20000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "goodbyeads",
+      "url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt",
+      "original_url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt",
+      "format": "hosts",
+      "min_domains": 20000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "easyprivacy",
+      "url": "https://easylist.to/easylist/easyprivacy.txt",
+      "original_url": "https://easylist.to/easylist/easyprivacy.txt",
+      "format": "abp",
+      "min_domains": 1000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "hagezi-tif",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
+      "format": "abp",
+      "min_domains": 20000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true,
+      "max_age_hours": 72
+    },
+    {
+      "id": "hagezi-pro",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt",
+      "format": "abp",
+      "min_domains": 20000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true,
+      "max_age_hours": 72
+    },
+    {
+      "id": "adguard-social",
+      "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_4_Social/filter.txt",
+      "original_url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_4_Social/filter.txt",
+      "format": "abp",
+      "min_domains": 1,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "adguard-base",
+      "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",
+      "original_url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",
+      "format": "abp",
+      "min_domains": 1000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "adguard-spyware",
+      "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt",
+      "original_url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt",
+      "format": "abp",
+      "min_domains": 1000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "blocklistproject-tracking",
+      "url": "https://blocklistproject.github.io/Lists/tracking.txt",
+      "original_url": "https://blocklistproject.github.io/Lists/tracking.txt",
+      "format": "hosts",
+      "min_domains": 10000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "hagezi-xiaomi",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-oppo-realme",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.oppo-realme.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.oppo-realme.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-vivo",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-roku",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.roku.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.roku.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-lgwebos",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.lgwebos.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.lgwebos.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-tiktok-extended",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.extended.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.extended.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-tiktok",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-samsung",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-winoffice",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-huawei",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-apple",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "hagezi-amazon",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.amazon.txt",
+      "original_url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.amazon.txt",
+      "format": "abp",
+      "min_domains": 3,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers.",
+      "require_entry_count": true
+    },
+    {
+      "id": "perflyst-smarttv",
+      "url": "https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt",
+      "original_url": "https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt",
+      "format": "hosts",
+      "min_domains": 10,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "perflyst-firetv",
+      "url": "https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt",
+      "original_url": "https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt",
+      "format": "hosts",
+      "min_domains": 5,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "goodbyeads-youtube",
+      "url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Formats/GoodbyeAds-YouTube-AdBlock-Filter.txt",
+      "original_url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Formats/GoodbyeAds-YouTube-AdBlock-Filter.txt",
+      "format": "abp",
+      "min_domains": 1000,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "goodbyeads-samsung",
+      "url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Samsung-AdBlock.txt",
+      "original_url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Samsung-AdBlock.txt",
+      "format": "hosts",
+      "min_domains": 10,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    },
+    {
+      "id": "goodbyeads-xiaomi",
+      "url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Xiaomi-Extension.txt",
+      "original_url": "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Xiaomi-Extension.txt",
+      "format": "hosts",
+      "min_domains": 10,
+      "max_domains": 5000000,
+      "max_download_bytes": 134217728,
+      "license": "Upstream terms apply; retain original attribution and inspect source headers."
+    }
+  ]
+}

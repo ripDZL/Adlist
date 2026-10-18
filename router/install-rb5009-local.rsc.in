@@ -1,0 +1,173 @@
+# Adlist __BUILDER_VERSION__, generated from a successful full-source build. RouterOS 7.20+.
+# Stable managed tags allow local v2 upgrades. No network/DNS upstream edits.
+{
+    :local tag "ripDZL-adlist-v2"
+    :local candidateTag "ripDZL-adlist-v2-candidate"
+    :local listFile "__ADLIST_FILE__"
+    :local countFile "__COUNT_FILE__"
+    :local snapshotNames __EXPECTED_NAMES__
+    :local snapshotBytes __EXPECTED_BYTES__
+    :local eligible __ELIGIBLE__
+    :local cacheKiB __CACHE_KIB__
+    :local oldCache [/ip/dns/get cache-size]
+    :local minFree __MIN_FREE_BYTES__
+    :local candidate ""
+    :local oldRemoved false
+    :local changedCache false
+    :local alreadyCurrent false
+    :if ($eligible = false) do={ :error "Full list exceeds the router budget. Full PC output is intact; do not force installation." }
+    :if ([/system/resource/get total-memory] < 1073741824) do={ :error "Full-source deployment requires at least 1 GiB RAM" }
+    :if ($oldCache > __MAX_CACHE_KIB__) do={ :error "Existing cache exceeds the managed maximum; inspect manually" }
+    :if ($oldCache > $cacheKiB) do={ :set cacheKiB $oldCache }
+    :local requiredFree (($cacheKiB * 1024) + $minFree)
+    :if ([/system/resource/get free-memory] < $requiredFree) do={ :error "Insufficient free RAM for this full list plus the reserved headroom" }
+    :if ([/system/resource/get free-hdd-space] < 33554432) do={ :error "Keep at least 32 MiB storage free after upload" }
+    :if ([:len [/file/find where name=$listFile]] != 1) do={ :error "Upload the generated versioned domain file" }
+    :if ([:len [/file/find where name=$countFile]] != 1) do={ :error "Upload the matching count file" }
+    :local uploadSize [/file/get [/file/find where name=$listFile] size]
+    :if (($uploadSize != $snapshotBytes) || ($uploadSize > __MAX_FILE_BYTES__)) do={ :error "Incomplete upload or wrong installer/data pair" }
+    :if ([/file/get [/file/find where name=$countFile] size] > 12) do={ :error "Invalid count file" }
+    :local expected [:tonum [/file/get [/file/find where name=$countFile] contents]]
+    :if ([:typeof $expected] != "num") do={ :error "Invalid count file" }
+    :if (($expected != $snapshotNames) || ($expected < 20000) || ($expected > __MAX_NAMES__)) do={ :error "Wrong count or router budget exceeded" }
+    :foreach scriptName in={"adlist-v2-restore-cache";"adlist-v2-memory-guard";"adlist-v2-runtime-state"} do={
+        :foreach scriptId in=[/system/script/find where name=$scriptName] do={
+            :if ([/system/script/get $scriptId comment] != $tag) do={ :error "A reserved script name belongs to another configuration" }
+        }
+    }
+    :foreach taskId in=[/system/scheduler/find where name="adlist-v2-memory-guard"] do={
+        :if ([/system/scheduler/get $taskId comment] != $tag) do={ :error "Reserved scheduler name belongs to another configuration" }
+    }
+    :foreach entryId in=[/ip/dns/adlist/find] do={
+        :local entryComment [/ip/dns/adlist/get $entryId comment]
+        :if (($entryComment != $tag) && ($entryComment != $candidateTag)) do={ :error "Export and inspect unrelated adlists before migration" }
+    }
+    :local oldIds [/ip/dns/adlist/find where comment=$tag]
+    :if ([:len $oldIds] > 1) do={ :error "Multiple managed lists require manual inspection" }
+    :local oldFile ""
+    :local oldCountFile ""
+    :local oldNames 0
+    :local oldDisabled false
+    :if ([:len $oldIds] = 1) do={
+        :local oldId [:pick $oldIds 0]
+        :if ([:len [/ip/dns/adlist/get $oldId url]] > 0) do={ :error "URL-mode list: retain a verified local recovery file before migration" }
+        :set oldFile [:tostr [/ip/dns/adlist/get $oldId file]]
+        :if ([:len [/file/find where name=$oldFile]] != 1) do={ :error "The previous local recovery file is missing" }
+        :set oldNames [/ip/dns/adlist/get $oldId name-count]
+        :set oldDisabled [/ip/dns/adlist/get $oldId disabled]
+        :if ([:len $oldFile] > 4) do={ :set oldCountFile ([:pick $oldFile 0 ([:len $oldFile] - 4)] . ".count.txt") }
+        :if (($oldFile = $listFile) && ($oldNames = $expected) && ($oldDisabled = false)) do={ :set alreadyCurrent true }
+    }
+    :global adlistV2InstallUntil
+    :local uptimeNow [/system/resource/get uptime]
+    :if ([:typeof $adlistV2InstallUntil] = "time") do={
+        :if ($uptimeNow < $adlistV2InstallUntil) do={ :error "An import is active; interrupted installs unlock after ten minutes" }
+    }
+    :set adlistV2InstallUntil ($uptimeNow + 10m)
+    :onerror installError in={
+        :if ([:len [/system/script/find where name="adlist-v2-restore-cache"]] = 0) do={
+            /system/script/add name="adlist-v2-restore-cache" policy=read,write,test comment=$tag source=("/ip/dns/set cache-size=" . $oldCache)
+        }
+        :local guardId [/system/script/find where name="adlist-v2-memory-guard" and comment=$tag]
+        :if ([:len $guardId] = 0) do={ :set guardId [/system/script/add name="adlist-v2-memory-guard" policy=read,write,test comment=$tag] }
+        /system/script/set $guardId policy=read,write,test source={
+            :global adlistV2InstallUntil
+            :local installationActive false
+            :if ([:typeof $adlistV2InstallUntil] = "time") do={
+                :if ([/system/resource/get uptime] < $adlistV2InstallUntil) do={ :set installationActive true }
+            }
+            :local owned [/ip/dns/adlist/find where comment="ripDZL-adlist-v2"]
+            :local staged [/ip/dns/adlist/find where comment="ripDZL-adlist-v2-candidate"]
+            :local totalNames 0
+            :foreach item in=$owned do={ :set totalNames ($totalNames + [/ip/dns/adlist/get $item name-count]) }
+            :foreach item in=$staged do={ :set totalNames ($totalNames + [/ip/dns/adlist/get $item name-count]) }
+            :if (([/system/resource/get free-memory] < __MIN_FREE_BYTES__) || ($totalNames > __MAX_NAMES__)) do={
+                :if ([:len $owned] > 0) do={ /ip/dns/adlist/remove $owned }
+                :if ([:len $staged] > 0) do={ /ip/dns/adlist/remove $staged }
+                :if ($totalNames > 0) do={ :log error "Adlist: managed lists removed for RAM pressure or name cap. Inspect resources before reinstallation." }
+            } else={
+                :if (($installationActive = false) && ([:len $staged] > 0)) do={
+                    /ip/dns/adlist/remove $staged
+                    :log warning "Adlist: abandoned disabled candidate removed after expired lease"
+                }
+            }
+        }
+        :local schedulerId [/system/scheduler/find where name="adlist-v2-memory-guard"]
+        :if ([:len $schedulerId] = 0) do={
+            /system/scheduler/add name="adlist-v2-memory-guard" start-time=startup interval=1m on-event="/system/script/run adlist-v2-memory-guard" policy=read,write,test comment=$tag
+        } else={
+            /system/scheduler/set $schedulerId disabled=no interval=1m on-event="/system/script/run adlist-v2-memory-guard" policy=read,write,test
+        }
+        :local abandoned [/ip/dns/adlist/find where comment=$candidateTag]
+        :if ([:len $abandoned] > 0) do={ /ip/dns/adlist/remove $abandoned }
+        :if ($alreadyCurrent = false) do={
+            # Full-size lists are never deliberately loaded side by side.
+            # DNS forwarding continues, with an ad-blocking gap during replacement.
+            :if ([:len $oldIds] = 1) do={
+                /ip/dns/adlist/remove $oldIds
+                :set oldRemoved true
+            }
+            :if ($oldCache != $cacheKiB) do={
+                /ip/dns/set cache-size=$cacheKiB
+                :set changedCache true
+            }
+            :if ([/system/resource/get free-memory] < $requiredFree) do={ :error "RAM headroom disappeared before import" }
+            :set candidate [/ip/dns/adlist/add file=$listFile disabled=yes comment=$candidateTag]
+            :local importedNames 0
+            :local tries 0
+            :while (($importedNames < $expected) && ($tries < 180)) do={
+                :if ([/system/resource/get free-memory] < $minFree) do={ :error "RAM reserve reached during import" }
+                :delay 1s
+                :set importedNames [/ip/dns/adlist/get $candidate name-count]
+                :set tries ($tries + 1)
+            }
+            :if ($importedNames != $expected) do={ :error "Incomplete import; previous local file retained for rollback" }
+            :if ([/system/resource/get free-memory] < $minFree) do={ :error "RAM reserve reached before activation" }
+            /ip/dns/adlist/set $candidate disabled=no comment=$tag
+        }
+        :local stateId [/system/script/find where name="adlist-v2-runtime-state" and comment=$tag]
+        :if ([:len $stateId] = 0) do={
+            /system/script/add name="adlist-v2-runtime-state" policy=read comment=$tag source=(":return " . $cacheKiB)
+        } else={
+            /system/script/set $stateId source=(":return " . $cacheKiB)
+        }
+    } do={
+        :if ($candidate != "") do={ :do { /ip/dns/adlist/remove $candidate } on-error={} }
+        :if ($changedCache) do={ :do { /ip/dns/set cache-size=$oldCache } on-error={ :log error "Adlist: cache restoration failed; inspect DNS settings" } }
+        :if ($oldRemoved) do={
+            :local rollbackEntry ""
+            :onerror rollbackError in={
+                :if ([/system/resource/get free-memory] < (($oldCache * 1024) + $minFree)) do={ :error "RAM too low to reload the previous list" }
+                :set rollbackEntry [/ip/dns/adlist/add file=$oldFile disabled=yes comment=$tag]
+                :local restoredNames 0
+                :local restoreTries 0
+                :while (($restoredNames < $oldNames) && ($restoreTries < 180)) do={
+                    :if ([/system/resource/get free-memory] < $minFree) do={ :error "RAM reserve reached during rollback" }
+                    :delay 1s
+                    :set restoredNames [/ip/dns/adlist/get $rollbackEntry name-count]
+                    :set restoreTries ($restoreTries + 1)
+                }
+                :if ($restoredNames != $oldNames) do={ :error "Previous list did not reload completely" }
+                /ip/dns/adlist/set $rollbackEntry disabled=$oldDisabled
+                :log warning "Adlist: previous local list reloaded after failed update"
+            } do={
+                :if ($rollbackEntry != "") do={ :do { /ip/dns/adlist/remove $rollbackEntry } on-error={} }
+                :log error ("Adlist rollback stopped: " . $rollbackError . ". Blocking is absent; upstream DNS settings remain. Previous data file retained.")
+            }
+        }
+        :set adlistV2InstallUntil 0s
+        :log error ("Adlist installation failed: " . $installError)
+        :error "Adlist update failed. Inspect log/resource state and retained previous data before retrying."
+    }
+    :set adlistV2InstallUntil 0s
+    :do {
+        :if ($alreadyCurrent = false) do={
+            :foreach fileId in=[/file/find] do={
+                :local entryName [/file/get $fileId name]
+                :if (($entryName ~ "^adlist-v3-[0-9a-f]{16}(\\.count)?\\.txt\$") && ($entryName != $listFile) && ($entryName != $countFile) && ($entryName != $oldFile) && ($entryName != $oldCountFile)) do={ /file/remove $fileId }
+            }
+        }
+    } on-error={ :log warning "Adlist installed; inspect old deployment files for cleanup" }
+    :log info ("Adlist 3 installed: " . $expected . " exact names; cache KiB=" . $cacheKiB)
+    :put "Installed. Inspect resources, DNS/adlist name-count, and guard scheduler run count."
+}

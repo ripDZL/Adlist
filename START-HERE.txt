@@ -1,0 +1,65 @@
+Adlist 3.0.2 - all 31 original sources - October 18, 2026
+
+This ZIP contains the complete builder, not a prebuilt full-list snapshot.
+The editing environment could not download every large source. No complete
+live domain count or measured router RAM use is being claimed.
+
+CHECK YOUR EXISTING BUILD FIRST (NO DOWNLOADS)
+1. Extract this ZIP into a separate folder beside the completed build.
+2. Run Audit-Existing-Build.cmd and paste the completed build folder path.
+3. Send the new domain-audit\coverage-audit.json to review the actual names.
+4. Extract domain-review.csv.gz if you want to read the flagged domain CSV.
+   Flags are review candidates, not automatic exclusions.
+
+Exact duplicates are already removed by the merger. Older builds lack the
+per-domain source provenance needed for precise source-removal savings.
+A normal Build-Adlist.cmd run in this version produces that overlap audit
+from all 31 sources, alongside the complete list. See DOMAIN-REVIEW.md.
+
+ALREADY BUILT ALL 31 SOURCES (3,210,777 names)?
+1. Extract the WHOLE ZIP into a SEPARATE folder beside the old build.
+   Do NOT overwrite the completed v3.0.0 folder or edit its configuration.
+2. Double-click Prepare-Existing-Build.cmd.
+3. Paste the old folder path when prompted. It must contain sources.json,
+   stats.json, merged_hosts.txt and the other successful build files.
+4. The helper verifies and copies the complete result and your allow/block
+   rules. It downloads nothing and leaves the original build intact.
+5. Read the NEW router-ready\INSTALL.txt before router installation.
+
+For 3,210,777 names the new profile plans a 336 MiB cache. It requires at
+least 592 MiB free RAM before import, including a 256 MiB reserve. The
+384 MiB ceiling is not automatically allocated. The installer checks live
+RAM and storage and refuses if they are insufficient. Do not force it.
+No live router RAM measurement or installation has been performed here.
+
+NO COMPLETE BUILD YET?
+1. Extract the WHOLE ZIP to a new folder. Keep your currently working version.
+2. Double-click Build-Adlist.cmd. Python 3.11+ is required; no pip packages.
+3. Wait for all 31 sources to succeed. Any failure keeps the previous output.
+4. Read the final result and router-ready\INSTALL.txt.
+
+Successful builds create:
+  merged_hosts.txt        Full deduplicated DNS-name union, with no truncation.
+  merged_hosts.txt.gz     Verified gzip copy; do NOT upload to the router.
+  stats.json             Counts, hashes and parsing results for all 31 sources.
+  source-audit.csv        Readable per-source contribution report.
+  coverage-audit.json     True per-source exclusivity after a new full build.
+  source-overlap.csv     Pairwise exact-name overlaps after a new full build.
+  domain-review.csv.gz   Domain review candidates, with source attribution.
+  suffix_domains.txt     Audit of ABP suffix roots; NOT a router upload list.
+  router-ready\          Versioned domain/count files and matching installer.
+
+If the complete union exceeds the router budget, the full PC list remains
+intact and the generated installer REFUSES deployment. Do not raise limits
+to force it. No router files exist before a successful complete build or reuse.
+
+Before router installation, read README.md, retain a DNS export and run the
+provided live dry-run. The scripts preserve firewall, DHCP, interfaces,
+upstream DNS, DoH and remote-request settings.
+
+Full-size updates unload the old list before loading its replacement to
+avoid two full lists in RAM. DNS forwarding continues, but ad blocking has
+a temporary gap. The previous local file is retained for bounded rollback.
+
+For an error, send build-error.log. After a successful build, send stats.json
+and source-audit.csv to review the actual full count and deployment budget.

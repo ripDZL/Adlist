@@ -1,0 +1,1 @@
+# Exact names or *.example.com. Explicit local allow rules take priority.

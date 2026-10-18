@@ -1,0 +1,434 @@
+{
+  "final_domains": 3210784,
+  "exact_duplicate_names_in_published_output": 0,
+  "review_candidate_domains": 98171,
+  "review_reason_counts": {
+    "unusually_long_valid_hostname_review_only": 724,
+    "video_delivery_domain_review_playback": 97447
+  },
+  "children_with_listed_parent": 557552,
+  "parent_child_examples": [
+    {
+      "child": "0--skitch--0.tt.omtrdc.net",
+      "parent": "tt.omtrdc.net"
+    },
+    {
+      "child": "0-0-0-birkart-clws-ifs-globalmn.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-0-stagemn.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-0000-ac1f6b9bc102.cdn.adx1.com",
+      "parent": "cdn.adx1.com"
+    },
+    {
+      "child": "0-009.0-132.net.daraz.com",
+      "parent": "0-132.net.daraz.com"
+    },
+    {
+      "child": "0-00d10140000motieas-990auyn11w0wpnuy4.dcsportal.0-astrologie.net.daraz.com",
+      "parent": "dcsportal.0-astrologie.net.daraz.com"
+    },
+    {
+      "child": "0-00d10140100motieas-990auyn11w0wpnuy4.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-00d30000000z4uceak.0-astrologie.net.daraz.com",
+      "parent": "0-astrologie.net.daraz.com"
+    },
+    {
+      "child": "0-00d30000000z4uceak.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-00d30000000z5uceak.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-00proplus3xncf83region.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-01-car21-10-r-oa-1.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-01-car29cf22.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-02-121-134-131-223-api1webw17sellerpackaging-profile-pay.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-02-122-134-131-223-api1webw17sellerpackaging-profile-pay.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-02-124-134-131-223-api1webw17sellerpackaging-profile-pay.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-04-121-134-131-223-api1webw17sellerpackaging-profile-pay.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-058-076-zigzagstrcloudfrontcar31.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-058-frontpage.net.daraz.com",
+      "parent": "net.daraz.com"
+    },
+    {
+      "child": "0-0580209tl.net.daraz.com",
+      "parent": "net.daraz.com"
+    }
+  ],
+  "parent_child_policy": "Keep both: RouterOS adlists match exact names. A listed parent does not replace an explicit child. No suffix pruning was performed.",
+  "dns_lookups_performed": 0,
+  "automatic_domain_removals": 0,
+  "source_overlap_available": true,
+  "source_count": 31,
+  "sources": [
+    {
+      "id": "oisd-big",
+      "accepted_names": 234075,
+      "retained_final_names": 234075,
+      "exclusive_final_names": 40725,
+      "covered_by_other_inputs": 193350,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "66c42178236c5423a6bbc2d80a738fbb0e06283eb69157854d4060dc07979347"
+    },
+    {
+      "id": "frogeye-firstparty",
+      "accepted_names": 14649,
+      "retained_final_names": 14649,
+      "exclusive_final_names": 368,
+      "covered_by_other_inputs": 14281,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "86ba3b93dae6f1f347dddc0271feaca0413516fea9bdb79a488576e704cdf8e3"
+    },
+    {
+      "id": "windows-spyblocker",
+      "accepted_names": 347,
+      "retained_final_names": 347,
+      "exclusive_final_names": 248,
+      "covered_by_other_inputs": 99,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "709c00d24f5a50dab46ce18d8b1cd175db4593dc7f65623ed89070075a85a3a0"
+    },
+    {
+      "id": "perflyst-android",
+      "accepted_names": 80,
+      "retained_final_names": 80,
+      "exclusive_final_names": 3,
+      "covered_by_other_inputs": 77,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "164b9bbb1030b69da5d0c2f5a327c7780c9674dc589f65996a974bb0184814ab"
+    },
+    {
+      "id": "stevenblack",
+      "accepted_names": 73633,
+      "retained_final_names": 73633,
+      "exclusive_final_names": 40644,
+      "covered_by_other_inputs": 32989,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "2ecaae284a96b89f9aae863673f3741c8661ecd1f5eb09aaf5c29b5fa3eabdd3"
+    },
+    {
+      "id": "developerdan",
+      "accepted_names": 428454,
+      "retained_final_names": 428454,
+      "exclusive_final_names": 400620,
+      "covered_by_other_inputs": 27834,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "0b173f72f93228b9520ff1ba73afd5d8943676d0e16af920b7adae868a58e299"
+    },
+    {
+      "id": "goodbyeads",
+      "accepted_names": 277742,
+      "retained_final_names": 277742,
+      "exclusive_final_names": 181092,
+      "covered_by_other_inputs": 96650,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "3ece2c35d8cb86f21c66baf1d6e9077403c8efdc11791dcb1bc47f399689f53f"
+    },
+    {
+      "id": "easyprivacy",
+      "accepted_names": 43228,
+      "retained_final_names": 43228,
+      "exclusive_final_names": 1694,
+      "covered_by_other_inputs": 41534,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 1,
+      "source_sha256": "b282fe8ba5a7584ba1c45d48ae8bf0d0d58a22a4ab437a135dac48cc55133eec"
+    },
+    {
+      "id": "hagezi-tif",
+      "accepted_names": 2101967,
+      "retained_final_names": 2101967,
+      "exclusive_final_names": 1906357,
+      "covered_by_other_inputs": 195610,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "b0810ee299d2620e2a4f8d83bcf50c5b8e20c4297151414239ad9d37360660ba"
+    },
+    {
+      "id": "hagezi-pro",
+      "accepted_names": 201729,
+      "retained_final_names": 201729,
+      "exclusive_final_names": 40432,
+      "covered_by_other_inputs": 161297,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "ac644ae8c46b6a908a80f7a3d90ada1ced3ad3fbf21d7b35d8449b65c41c0b0f"
+    },
+    {
+      "id": "adguard-social",
+      "accepted_names": 2,
+      "retained_final_names": 2,
+      "exclusive_final_names": 0,
+      "covered_by_other_inputs": 2,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "eaeccc9da49833f0a3000da66bee9197d8e2c9d4a6fd274862ca1bf2aa1ffcba"
+    },
+    {
+      "id": "adguard-base",
+      "accepted_names": 60639,
+      "retained_final_names": 60639,
+      "exclusive_final_names": 10487,
+      "covered_by_other_inputs": 50152,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 476,
+      "source_sha256": "098808648610b715bdab8aee569caa933bedfc6d68d9b26f4a1287e9f51f5b24"
+    },
+    {
+      "id": "adguard-spyware",
+      "accepted_names": 92423,
+      "retained_final_names": 92423,
+      "exclusive_final_names": 36584,
+      "covered_by_other_inputs": 55839,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 107,
+      "source_sha256": "6467b28814f31afa591ed15e74d93e878fb2325fc15c74930ff93ec333d02bb5"
+    },
+    {
+      "id": "blocklistproject-tracking",
+      "accepted_names": 143866,
+      "retained_final_names": 143866,
+      "exclusive_final_names": 78224,
+      "covered_by_other_inputs": 65642,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "f1de1c81739ce2480b1dea890e9be6a1212008b19318b585102cc64e7013b0f1"
+    },
+    {
+      "id": "hagezi-xiaomi",
+      "accepted_names": 345,
+      "retained_final_names": 345,
+      "exclusive_final_names": 1,
+      "covered_by_other_inputs": 344,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "1ec9d10373e72a32b011bcc84d0f61db7076c1008371628c2334426a59958665"
+    },
+    {
+      "id": "hagezi-oppo-realme",
+      "accepted_names": 489,
+      "retained_final_names": 489,
+      "exclusive_final_names": 6,
+      "covered_by_other_inputs": 483,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "13cbf19dcfda3abe015b1a0443cd9fd9c1def8119c0d38c487ed77e2f230ddfa"
+    },
+    {
+      "id": "hagezi-vivo",
+      "accepted_names": 244,
+      "retained_final_names": 244,
+      "exclusive_final_names": 5,
+      "covered_by_other_inputs": 239,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "8ec9493996a6d52d6ac4f30fa495507f7de4b50676e460517c21a4d34370ca6d"
+    },
+    {
+      "id": "hagezi-roku",
+      "accepted_names": 57,
+      "retained_final_names": 57,
+      "exclusive_final_names": 2,
+      "covered_by_other_inputs": 55,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "96ea39f5c028be57412fae2fcaa6c344b09904dd05dc44ee104e8e96b87472f8"
+    },
+    {
+      "id": "hagezi-lgwebos",
+      "accepted_names": 231,
+      "retained_final_names": 231,
+      "exclusive_final_names": 2,
+      "covered_by_other_inputs": 229,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "c02fd9ec2018f18dd5366fa4046d020ab2aa739e9b323c04965f46bd0902800a"
+    },
+    {
+      "id": "hagezi-tiktok-extended",
+      "accepted_names": 613,
+      "retained_final_names": 613,
+      "exclusive_final_names": 151,
+      "covered_by_other_inputs": 462,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "f6181c82d790068696fe256e06114b0f7d9341e85976bbe01117cb10fb51d6b0"
+    },
+    {
+      "id": "hagezi-tiktok",
+      "accepted_names": 437,
+      "retained_final_names": 437,
+      "exclusive_final_names": 1,
+      "covered_by_other_inputs": 436,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "7c58f98687ddc2818bcc68a4501350caf1acb8237912c3db5e318e899f8ae87b"
+    },
+    {
+      "id": "hagezi-samsung",
+      "accepted_names": 200,
+      "retained_final_names": 200,
+      "exclusive_final_names": 1,
+      "covered_by_other_inputs": 199,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "4a3172ef42d08baf42f5d615ce3aea4210682dad716b2f7e4326bf1dc6c0d7de"
+    },
+    {
+      "id": "hagezi-winoffice",
+      "accepted_names": 383,
+      "retained_final_names": 383,
+      "exclusive_final_names": 5,
+      "covered_by_other_inputs": 378,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "50bd83fcc009acd7affbbdc818304636859e9fad87be9f57e42cd9857ae9d3a2"
+    },
+    {
+      "id": "hagezi-huawei",
+      "accepted_names": 135,
+      "retained_final_names": 135,
+      "exclusive_final_names": 1,
+      "covered_by_other_inputs": 134,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "9e9f8636536760fa5d37e28bb13d1db727a3d09cad4c06d6bb0dd01fb5a61b42"
+    },
+    {
+      "id": "hagezi-apple",
+      "accepted_names": 110,
+      "retained_final_names": 110,
+      "exclusive_final_names": 1,
+      "covered_by_other_inputs": 109,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "9348fd87a79566e8b2ae8051ccd32c1b1845c2723c912e80d345855655eb3561"
+    },
+    {
+      "id": "hagezi-amazon",
+      "accepted_names": 368,
+      "retained_final_names": 368,
+      "exclusive_final_names": 23,
+      "covered_by_other_inputs": 345,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "075dc5a44fbfef0b8074e2a961527418ef84230ce858337cbdc88c8cc98adb83"
+    },
+    {
+      "id": "perflyst-smarttv",
+      "accepted_names": 497,
+      "retained_final_names": 497,
+      "exclusive_final_names": 52,
+      "covered_by_other_inputs": 445,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "d891473d90fc1caee465b1feb60d20b3b3ee2f90a398ae40aaf215f0050c9d4a"
+    },
+    {
+      "id": "perflyst-firetv",
+      "accepted_names": 16,
+      "retained_final_names": 16,
+      "exclusive_final_names": 3,
+      "covered_by_other_inputs": 13,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "22d719cde872d51365f350e142e102be5c53dcbd668a795c0f51c14d1d812fbb"
+    },
+    {
+      "id": "goodbyeads-youtube",
+      "accepted_names": 97645,
+      "retained_final_names": 97645,
+      "exclusive_final_names": 97560,
+      "covered_by_other_inputs": 85,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "70fc1dcb5d44106781f4a78a76d438ec17f2693bff897cbb743129d2da0a8b27"
+    },
+    {
+      "id": "goodbyeads-samsung",
+      "accepted_names": 101,
+      "retained_final_names": 101,
+      "exclusive_final_names": 0,
+      "covered_by_other_inputs": 101,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "e82b11007928d64f82519b580c8bd0dccec7ee4e46072fb04dc99ad7b8fdf62f"
+    },
+    {
+      "id": "goodbyeads-xiaomi",
+      "accepted_names": 278,
+      "retained_final_names": 278,
+      "exclusive_final_names": 0,
+      "covered_by_other_inputs": 278,
+      "removed_by_final_allowlist": 0,
+      "duplicate_rules_in_source": 0,
+      "source_sha256": "92e7eb9880839e3526a76fea72977ee32168255aa288dc7bbdd4b53f353ce338"
+    }
+  ],
+  "input_domain_memberships": 3774983,
+  "final_source_memberships": 3774983,
+  "repeated_source_memberships_removed": 564201,
+  "final_names_in_multiple_sources": 375489,
+  "source_membership_histogram": {
+    "0": 2,
+    "1": 2835293,
+    "2": 251956,
+    "3": 75019,
+    "4": 35982,
+    "5": 9222,
+    "6": 2646,
+    "7": 527,
+    "8": 117,
+    "9": 18,
+    "10": 2
+  },
+  "custom_only_names": 2,
+  "note": "Exclusive counts are independent of source order. Zero exclusive names means one input can be omitted for this snapshot; do not remove multiple such inputs simultaneously without recomputing. Pinned custom names count as another input. Review flags are not automatic exclusions.",
+  "schema_version": 1,
+  "audited_utc": "2026-10-18T05:22:47.140924+00:00",
+  "snapshot_sha256": "992aacf50bec519deeb02544e2b7c27678bd8db8e2e1c31d7f16c021725f31c8",
+  "snapshot_generated_utc": "2026-10-18T05:22:28.516989+00:00",
+  "scope": "Entire validated final domain snapshot; source overlap only when full provenance is available",
+  "necessity": "Membership, overlap and syntax do not establish that a domain is harmful or unnecessary. No live DNS/nonresolution pruning or usage-based removals are performed."
+}

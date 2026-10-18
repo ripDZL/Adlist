@@ -1,0 +1,11 @@
+# Pinned domains preserved from the recovered local Safe Domains variant.
+ads.pubmatic.com
+adservice.google.com
+ep2.adtrafficquality.google
+googleads.g.doubleclick.net
+mrkt.forgecdn.net
+overwolf-d.openx.net
+pagead2.googlesyndication.com
+securepubads.g.doubleclick.net
+ssbsync.smartadserver.com
+tracking.overwolf.com
