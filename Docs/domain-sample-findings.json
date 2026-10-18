@@ -1,0 +1,216 @@
+{
+  "scope": "20 available real source samples, not the completed 31-source snapshot",
+  "sources": [
+    {
+      "id": "windows-spyblocker",
+      "domains": 347,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "a942cb4bb22740ce0cc699f0245eb2ad7de3f01f473419d6e74550f434664212",
+      "exclusive_among_available_20_only": 318,
+      "overlap_among_available_20_only": 29
+    },
+    {
+      "id": "perflyst-android",
+      "domains": 80,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "4859ee1173cb2f025dad5e372c1f407feed16613dea65a73946e1fdeed13b62b",
+      "exclusive_among_available_20_only": 71,
+      "overlap_among_available_20_only": 9
+    },
+    {
+      "id": "adguard-social",
+      "domains": 2,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "856e5d44834c03fcdddf5a1dbcb36612667af72b43c292e4c0104f124813a459",
+      "exclusive_among_available_20_only": 2,
+      "overlap_among_available_20_only": 0
+    },
+    {
+      "id": "hagezi-xiaomi",
+      "domains": 345,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "47b44e23007899c29b7b79d24b4c73bf0619aed268438d20491e03ad350dd265",
+      "exclusive_among_available_20_only": 268,
+      "overlap_among_available_20_only": 77
+    },
+    {
+      "id": "hagezi-oppo-realme",
+      "domains": 489,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "75acb3f920d475b4befda44cdad897e9dd8b98f5957ab15b7eca53ff1336d225",
+      "exclusive_among_available_20_only": 489,
+      "overlap_among_available_20_only": 0
+    },
+    {
+      "id": "hagezi-vivo",
+      "domains": 244,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "9fc7eb81c3a4c95c1c8a42ab440fe2d91314e24e8fbde355e3b0a0ff9801e7ba",
+      "exclusive_among_available_20_only": 244,
+      "overlap_among_available_20_only": 0
+    },
+    {
+      "id": "hagezi-roku",
+      "domains": 57,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "0f10a73a3cd808b3feb1c958926b254f503057ee80a25d5377436e0a5faa8bf8",
+      "exclusive_among_available_20_only": 56,
+      "overlap_among_available_20_only": 1
+    },
+    {
+      "id": "hagezi-lgwebos",
+      "domains": 231,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "9c30d50fd4725cf231721e85fc0c8a35a3d117f1dc98e2d7dcf8e9471f46aed4",
+      "exclusive_among_available_20_only": 230,
+      "overlap_among_available_20_only": 1
+    },
+    {
+      "id": "hagezi-tiktok-extended",
+      "domains": 613,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "dd116c5fec909c230f6dbafe6b17321a24abcc59fc5d92bed5b6651a02e9421f",
+      "exclusive_among_available_20_only": 178,
+      "overlap_among_available_20_only": 435
+    },
+    {
+      "id": "hagezi-tiktok",
+      "domains": 437,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "395bf8dbe3104127236c9a817d50ad8a6a77cd21f6df0b5a7f8b221eb659ea90",
+      "exclusive_among_available_20_only": 2,
+      "overlap_among_available_20_only": 435
+    },
+    {
+      "id": "hagezi-samsung",
+      "domains": 200,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "e3fbf1639252a73d1d9057f9f240714e9b43b8800443c99bac60d510b12896c3",
+      "exclusive_among_available_20_only": 169,
+      "overlap_among_available_20_only": 31
+    },
+    {
+      "id": "hagezi-winoffice",
+      "domains": 383,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "f3da50cffb701523d03d6ed855da9ea1fa8e2811275201f68a3fce29034f962f",
+      "exclusive_among_available_20_only": 354,
+      "overlap_among_available_20_only": 29
+    },
+    {
+      "id": "hagezi-huawei",
+      "domains": 135,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "e7cb8d98e3ce391e9149b752976e2ad0f56541e8ebb65ec5e0869820c132ce16",
+      "exclusive_among_available_20_only": 135,
+      "overlap_among_available_20_only": 0
+    },
+    {
+      "id": "hagezi-apple",
+      "domains": 110,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "8d5fce3779ed3a0a18545685f274d425875b081e2d8c7c6eced5b651aa201b2e",
+      "exclusive_among_available_20_only": 109,
+      "overlap_among_available_20_only": 1
+    },
+    {
+      "id": "hagezi-amazon",
+      "domains": 368,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "be2e787f75eaff8cc444e17a4b0abf2640de8f89118392bb9872ab429bcc4928",
+      "exclusive_among_available_20_only": 361,
+      "overlap_among_available_20_only": 7
+    },
+    {
+      "id": "perflyst-smarttv",
+      "domains": 497,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "3506f5b593fb3c5766b3a8a11bb9addec05283fd64ba4ece743cf294a122f55b",
+      "exclusive_among_available_20_only": 432,
+      "overlap_among_available_20_only": 65
+    },
+    {
+      "id": "perflyst-firetv",
+      "domains": 16,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "4f46ea2ee90f34ea11aa4162d05aee590f39e8fe7e113fca1082fb20f61a9831",
+      "exclusive_among_available_20_only": 7,
+      "overlap_among_available_20_only": 9
+    },
+    {
+      "id": "goodbyeads-youtube",
+      "domains": 97645,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 97446,
+      "sha256": "fe25f363217c9bbf1b29e9b191229fde1a20910f3e2321cb4b20596b610e8e24",
+      "exclusive_among_available_20_only": 97637,
+      "overlap_among_available_20_only": 8
+    },
+    {
+      "id": "goodbyeads-samsung",
+      "domains": 101,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "75f957799c0eed379e06d9ae380f6a7ee08237329f22df2b74bb1e4fa1ec0c63",
+      "exclusive_among_available_20_only": 34,
+      "overlap_among_available_20_only": 67
+    },
+    {
+      "id": "goodbyeads-xiaomi",
+      "domains": 278,
+      "duplicates_in_feed": 0,
+      "googlevideo_names": 0,
+      "sha256": "2bb518e9ad3a31b7f89bbf7692e2b4e34d18896adeef442877b9b7af0a2dd4b5",
+      "exclusive_among_available_20_only": 197,
+      "overlap_among_available_20_only": 81
+    }
+  ],
+  "pairs": [
+    {
+      "a": "hagezi-tiktok",
+      "b": "hagezi-tiktok-extended",
+      "a_size": 437,
+      "b_size": 613,
+      "intersection": 435,
+      "a_not_b": 2,
+      "b_not_a": 178
+    },
+    {
+      "a": "goodbyeads-samsung",
+      "b": "hagezi-samsung",
+      "a_size": 101,
+      "b_size": 200,
+      "intersection": 29,
+      "a_not_b": 72,
+      "b_not_a": 171
+    },
+    {
+      "a": "goodbyeads-xiaomi",
+      "b": "hagezi-xiaomi",
+      "a_size": 278,
+      "b_size": 345,
+      "intersection": 77,
+      "a_not_b": 201,
+      "b_not_a": 268
+    }
+  ],
+  "union": 101927,
+  "repeated_memberships_removed": 651
+}
