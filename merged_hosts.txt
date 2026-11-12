@@ -885837,8 +885837,6 @@
 0.0.0.0 kryptaxeltrade.com
 0.0.0.0 kryptenz.com
 0.0.0.0 kryptex-soft.dnset.com
-0.0.0.0 kryptex.network
-0.0.0.0 kryptex.ru
 0.0.0.0 krypto-aus-zahlung.com
 0.0.0.0 krypto-auszahlung.com
 0.0.0.0 krypto-k.com
