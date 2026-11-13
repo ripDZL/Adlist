@@ -1,0 +1,72 @@
+name: Build original 31-source list
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 12 * * *'
+  push:
+    paths:
+      - '*.py'
+      - '*.json'
+      - 'allowlist.txt'
+      - 'blocklist.txt'
+      - 'router/**'
+      - 'tests/**'
+      - '.github/workflows/build-adlist.yml'
+  pull_request:
+    paths:
+      - '*.py'
+      - '*.json'
+      - 'allowlist.txt'
+      - 'blocklist.txt'
+      - 'router/**'
+      - 'tests/**'
+      - '.github/workflows/build-adlist.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: all31-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Parser, completeness and publication failure tests
+        run: python -m unittest discover -s tests -v
+
+  publish:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Build every source and verify complete output
+        run: |
+          python build_adlist.py
+          python build_adlist.py --verify
+          python -c "from pathlib import Path; assert all(Path(n).stat().st_size < 100000000 for n in ['merged_hosts.txt','merged_hosts.txt.gz','suffix_domains.txt','coverage-audit.json','source-overlap.csv','domain-review.csv.gz']), 'Full result exceeds GitHub file-size limit; no publication'"
+      - name: Commit the complete result
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add merged_hosts.txt merged_hosts.txt.gz merged_hosts.sha256 stats.json expected_names.txt suffix_domains.txt source-audit.csv coverage-audit.json source-overlap.csv domain-review.csv.gz
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update complete original 31-source DNS-name union'
+            git push origin HEAD:main
+          fi

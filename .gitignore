@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.build.lock
+.adlist-transaction/
+merged_hosts.previous.txt
+build-error*.log
+router-ready/
+local-inputs/
+domain-audit/
